@@ -195,12 +195,23 @@ const EEVDF = (() => {
     for (now = 0; now < T; now++) {
       if (Math.random() < 0.1) { const t = new Task(); eevdfQueue.push({...t, lag: 0, start: now, eligible: true}); cfsQueue.push(t); }
 
-      let waitCFS = 0, waitEEVDF = 0;
+let waitCFS = 0, waitEEVDF = 0;
       if (cfsQueue.length > 0) {
-        const t = cfsQueue[0];
+        const t = cfsQueue.shift();
         waitCFS = now - t.start;
         t.start = now + t.burst;
-        if (t.start < T) cfsQueue[0] = t;
+        if (t.start < T) cfsQueue.push(t);
+      }
+      if (eevdfQueue.length > 0) {
+        const eligible = eevdfQueue.filter(t => t.eligible && t.start <= now);
+        if (eligible.length > 0) {
+          const idx = eevdfQueue.findIndex(x => x.id === eligible.sort((a,b) => (a.start + a.eligibility) - (b.start + b.eligibility))[0].id);
+          const t = eevdfQueue.splice(idx, 1)[0];
+          waitEEVDF = now - t.start;
+          t.start = now + t.burst;
+          t.lag += t.burst;
+          if (t.start < T) eevdfQueue.push(t);
+        }
       }
       if (eevdfQueue.length > 0) {
         const eligible = eevdfQueue.filter(t => t.eligible && t.start <= now);
