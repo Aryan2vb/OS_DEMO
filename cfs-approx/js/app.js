@@ -249,10 +249,10 @@ const Charts = (() => {
     poly   : '#A855F7',
     eevdf  : '#8B5CF6',
     cfs    : '#6B7280',
-    active : '#94A3B8',
+    active : '#6B7280',
     err    : '#EF4444',
     bound  : '#7C3AED',
-    grid   : 'rgba(148,163,184,0.15)',
+    grid   : 'rgba(0,0,0,0.08)',
   };
  
   const baseOpts = (yLabel) => ({
@@ -262,16 +262,16 @@ const Charts = (() => {
     plugins: { legend: { display: false } },
     scales: {
       x: {
-        ticks: { maxTicksLimit: 8, font: { size: 10, family: 'JetBrains Mono, monospace' }, color: '#94A3B8' },
+        ticks: { maxTicksLimit: 8, font: { size: 10, family: 'JetBrains Mono, monospace' }, color: '#6B7280' },
         grid: { color: PALETTE.grid },
         border: { color: 'transparent' }
       },
       y: {
-        ticks: { font: { size: 10, family: 'JetBrains Mono, monospace' }, color: '#94A3B8',
+        ticks: { font: { size: 10, family: 'JetBrains Mono, monospace' }, color: '#6B7280',
                  callback: v => v.toFixed(2) },
         grid: { color: PALETTE.grid },
         border: { color: 'transparent' },
-        title: { display: !!yLabel, text: yLabel, color: '#64748B', font: { size: 10 } }
+        title: { display: !!yLabel, text: yLabel, color: '#6B7280', font: { size: 10 } }
       }
     }
   });
@@ -387,8 +387,8 @@ const Charts = (() => {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          x: { ticks: { font: { size: 10, family: 'JetBrains Mono' }, color: '#94A3B8' }, grid: { display: false } },
-          y: { min: 0, max: 4, ticks: { stepSize: 1, font: { size: 10, family: 'JetBrains Mono' }, color: '#94A3B8', callback: v => v + ' cyc' }, grid: { color: PALETTE.grid } }
+          x: { ticks: { font: { size: 10, family: 'JetBrains Mono' }, color: '#6B7280' }, grid: { display: false } },
+          y: { min: 0, max: 4, ticks: { stepSize: 1, font: { size: 10, family: 'JetBrains Mono' }, color: '#6B7280', callback: v => v + ' cyc' }, grid: { color: PALETTE.grid } }
         }
       }
     });
@@ -415,8 +415,8 @@ const Charts = (() => {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          x: { ticks: { font: { size: 10, family: 'JetBrains Mono' }, color: '#94A3B8' }, grid: { display: false } },
-          y: { ticks: { font: { size: 10, family: 'JetBrains Mono' }, color: '#94A3B8', callback: v => v.toFixed(3) }, grid: { color: PALETTE.grid } }
+          x: { ticks: { font: { size: 10, family: 'JetBrains Mono' }, color: '#6B7280' }, grid: { display: false } },
+          y: { ticks: { font: { size: 10, family: 'JetBrains Mono' }, color: '#6B7280', callback: v => v.toFixed(3) }, grid: { color: PALETTE.grid } }
         }
       }
 });
@@ -443,8 +443,8 @@ const Charts = (() => {
         maintainAspectRatio: false,
         plugins: { legend: { display: false } },
         scales: {
-          x: { ticks: { maxTicksLimit: 8, font: { size: 10, family: 'JetBrains Mono' }, color: '#94A3B8' }, grid: { color: PALETTE.grid }, border: { color: 'transparent' } },
-          y: { ticks: { font: { size: 10, family: 'JetBrains Mono' }, color: '#94A3B8' }, grid: { color: PALETTE.grid }, border: { color: 'transparent' }, title: { display: true, text: 'wait time', color: '#64748B' } }
+          x: { ticks: { maxTicksLimit: 8, font: { size: 10, family: 'JetBrains Mono' }, color: '#6B7280' }, grid: { color: PALETTE.grid }, border: { color: 'transparent' } },
+          y: { ticks: { font: { size: 10, family: 'JetBrains Mono' }, color: '#6B7280' }, grid: { color: PALETTE.grid }, border: { color: 'transparent' }, title: { display: true, text: 'wait time', color: '#6B7280' } }
         }
       }
     });
