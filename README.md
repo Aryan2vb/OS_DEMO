@@ -1,10 +1,10 @@
-# CFS Approximate Computing | Research Dashboard
+# Approximate Computing for OS Kernel Internals / Approximate Computing in OS Process Scheduling: Designing and Evaluating Error-Bounded Priority Decay Functions for CPU Fair-Share Scheduling
 
 A high-performance interactive dashboard for visualizing and analyzing approximate computing techniques for the Linux Completely Fair Scheduler (CFS).
 
 ![Project Dashboard Mockup](https://images.unsplash.com/photo-1551288049-bbbda5366391?auto=format&fit=crop&q=80&w=1200)
 
-## 🔬 Research Overview
+## Research Overview
 
 This project explores replacing the standard 3-cycle integer multiplication (`IMUL`) in the Linux kernel's load-average calculation (`calc_load`) with 1-cycle approximations. The goal is to reduce scheduler overhead on high-core-count systems while maintaining formal error bounds.
 
